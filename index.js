@@ -86,10 +86,11 @@ let avr = sum / newArr.length;
 // console.log(avr);
 
 //turn back into csv format
-let back_csv = "";
-for (i = 0; i < newArr.length; i++) {
-  back_csv = newArr[i].toString();
-  console.log(back_csv);
+let returnCsv = twoDArray[0].join(",") + `\\n`;
+for (const person of newArr) {
+  const values = Object.values(person);
+  returnCsv += values.join(",") + `\\n`;
 }
+console.log(returnCsv);
 
 // console.log(csvContent);
